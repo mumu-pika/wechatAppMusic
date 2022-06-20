@@ -101,6 +101,7 @@ ding ngrok --subdomain pika --port 3000
 
 
 >在播放音乐的时候,切换到其他页面,会保留一个底部的播放栏,点击可以再次回到音乐页。也可实现对音乐的控制。
+
 ![音乐小程序Cover9.png](https://s2.loli.net/2022/06/20/1FeiZ4f2mnb9zuQ.png)
 
 ### 7、搜索页 search 页
