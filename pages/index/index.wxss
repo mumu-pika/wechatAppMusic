@@ -1,0 +1,199 @@
+/* pages/index/index.wxss */
+
+/* 引入骨架屏样式 */
+@import "./index.skeleton.wxss";
+
+
+.indexContainer{
+  background-color: #fdf1e5;
+  height: 100%;
+}
+
+/* 轮播图样式 */
+.banners{
+  width: 100%;
+  height: 300rpx;
+}
+
+.banners image{
+  width: 100%;
+  height: 100%
+}
+
+/* 五个图标导航样式 */
+.navContainer{
+  /* display: flex; */
+  padding: 20rpx;
+  border-bottom:  2px solid #e6e6e6;
+}
+
+.navScroll{
+  display: flex;
+  /* 即使scroll-view enable-x让元素水平排列了，
+  但是计算高度仍然会以当时纵向排列的高度计算，所以需要设定一个高度，不然高度太高了 */
+  height: 200rpx;
+}
+
+.navItem{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:20%; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220rpx;
+  margin-right: 30rpx;
+}
+.navItem .iconfont{
+  width: 100rpx;  
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  /* background-color: rgb(240, 19, 19); */
+  background-color: #ff7043;
+  font-size:50rpx;
+  color: #fff;
+  margin:20rpx 0;
+}
+
+.navItem text {
+  white-space: nowrap; 
+  font-size: 26rpx;
+}
+
+
+
+/* 推荐歌曲 */
+.recommendContainer{
+  padding: 20rpx;
+  border-bottom:  2px solid #e6e6e6;
+}
+.recommendContainer .header{
+  padding-bottom: 20rpx;  
+}
+
+.recommendContainer .header .title{
+  font-size: 32rpx;
+  /* font-weight:bold; */
+  line-height: 80rpx;
+  color: #666;
+}
+
+.recommendContainer .header .more{
+  float: right;
+  border: 1rpx solid #333;
+  padding: 10rpx 20rpx;
+  font-size:24rpx;
+  border-radius: 30rpx;
+}
+
+ /* 内容区样式 */
+.recommendScroll{
+  display: flex;
+  /* 即使scroll-view enable-x让元素水平排列了，
+  但是计算高度仍然会以当时纵向排列的高度计算，所以需要设定一个高度，不然高度太高了 */
+  height: 300rpx;
+}
+
+.recommendScroll .scrollItem{
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+
+.recommendScroll .scrollItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.recommendScroll .scrollItem text{
+  /* display: inline-block; */
+  font-size: 26rpx;
+  /* 单行文本溢出隐藏，省略号隐藏
+  /* nowrap不换行 */
+  /* white-space: nowrap;  */
+  /* overflow是需要作用于块级元素上 */
+  /* overflow: hidden; */
+  /* text-overflow 属性并不会强制溢出事件的发生，文本过长时有可能会自动换行，导致根本不会触发 text-overflow 属性上的设置。因此，需要手动设置 white-space: nowrap 使文本不换行，以确保文本过长时会有溢出。 */
+  /* text-overflow: ellipsis;  */
+
+  /* 多行文本溢出隐藏，省略号代替 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; /*设置对齐模式，垂直对齐*/
+  -webkit-line-clamp:2; /*设置多行的行数*/
+} 
+
+/* 排行榜样式 */
+.topList{
+  padding: 20rpx;
+}
+
+.topListSwiper{
+  height: 440rpx;
+}
+
+.topListSwiper .swiperItem{
+  width: 96%;
+  /* background-color: #fbfbfb; */
+  background-color: #fdf1e5;
+}
+
+.topListSwiper .swiperItem .title{
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.topListSwiper .musicItem {
+  /* 当一个元素设置为flex，其子元素会自动成为block元素 */
+  /* 而且即使为块元素, 也是默认水平排列 */
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.topListSwiper .musicItem image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+
+.topListSwiper .musicItem .count{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  /* 由于行内块元素默认基线对齐，所以需要设置对齐方式
+  display: inline-block;
+  vertical-align: top;  */
+}
+
+.topListSwiper .musicItem .musicName{
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  /* 为了防止歌名过长导致歌名重叠 */
+  max-width:400rpx;
+  /* 不换行 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topListSwiper .musicItem .singerName{
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  /* 为了防止歌名过长导致歌名重叠 */
+  max-width:400rpx;
+  /* 不换行 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: red;
+  font-size: 24rpx;
+  margin: 4rpx;
+}

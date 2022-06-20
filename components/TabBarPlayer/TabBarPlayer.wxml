@@ -1,0 +1,27 @@
+<!--components/TabBarPlayer/TabBarPlayer.wxml-->
+<!-- 底部播放器 -->
+<view class="player">
+  <!-- 左侧音乐信息区域 -->
+  <view class="player-songContainer" bindtap="toSongDetail">
+    <image class="player-cover" src="{{cover}}" />
+    <view class="player-info">
+      <view class="player-info-title">{{title}}</view>
+      <view class="player-info-singer">{{singer}}</view>
+    </view>
+  </view>
+
+  <!-- 右侧音乐控制区域 -->
+  <view class="player-controls">
+    <!--播放或暂停-->
+    <text wx:if="{{isMusicPlay}}" class="iconfont icon-suspend2" bindtap="handlerMusicPause"/>
+    <text wx:else class="iconfont icon-play2" bindtap="handlerMusicPlay"/>
+
+    <!-- <image src="../../static/images/archer.jpg"></image> -->
+    <!-- <image wx:if="{{state == 'paused'}}" src="../images/02.png" bindtap="play" /> -->
+    <!-- <image wx:else src="../images/02stop.png" bindtap="pause" /> -->
+    <!--下一曲-->
+    <!-- <image src="../../static/images/archer.jpg"  /> -->
+    <!--切换到播放列表-->
+    <text class=" iconfont icon-playlist"></text>
+  </view>
+</view>

@@ -1,0 +1,137 @@
+/* pages/video/video.wxss */
+/* 顶部区域 */
+.videoContainer .header{
+  display: flex;
+  padding: 10rpx 3%;
+  background-color: #fdf1e5;
+}
+
+.videoContainer .header text{
+  width:60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 52rpx;
+  color: #ff7043;
+}
+
+
+
+.videoContainer .header .search{
+  border: 2rpx solid #9266f9;
+  /* 
+    flex-grow: 可拉伸  
+    flex-shrink：可压缩
+    flex-basis: 当前元素的宽度
+
+    flex默认值：flex-grow:0, flex-shrink:1, flex-basis: auto 
+    flex：1  表示flex-grow:0, flex-shrink:1, flex-basis: 0% 
+    flex: auto 表示flex-grow:1, flex-shrink:1, flex-basis: auto
+    flex:1 会导致父元素宽度自动为100%
+  */  
+  flex: 1;
+  margin: 0 10rpx;
+  text-align: center;
+  /* 子元素垂直居中 */
+  /* align-self:center;  */
+  line-height: 60rpx;
+  color:#d433c7cc;
+  border-radius: 10px;
+}
+
+/* 导航栏区域 */
+.navScroll{
+  display: flex;
+  white-space: nowrap;
+  height: 80rpx;
+}
+.navScroll .navItem{
+  padding:0 30rpx;
+  font-size:28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  
+}
+.navItem .active{
+  border-bottom: 2rpx solid #d43c33;
+}
+
+/* 视频列表 */
+.videoScroll{
+  /* 使用竖向滚动时，需要给scroll-view一个固定高度，通过 WXSS 设置 height */
+  /* calc()可以动态计算css的宽高 */
+  /* 注意！！ 运算符左右两侧必须要加空格，不然计算会失效 */
+  /* 视口单位：vh vw 1vh=1%的视口高度 1vw=1%的视口宽度 */
+  height: calc(100vh - 144rpx);
+}
+
+
+.videoItem{
+  padding: 0 3%;
+  margin-bottom: 20rpx;
+}
+
+.videoItem .common{
+  width:100%;
+  height: 360rpx;
+  border-radius: 10rpx;
+}
+
+
+
+/* 视频标题 content*/
+.videoItem .content {
+  font-size: 30rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 视频底部footer */
+.footer {
+  border-top: 2rpx solid #b2ebf2;
+  padding: 20rpx 0;
+}
+.footer .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footer  .nickName {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.footer .comments_praised {
+  float: right;
+}
+
+.comments_praised .btn {
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.comments_praised .btn:after {
+  border: none;
+}
+
+.comments_praised .item {
+  margin-left: 50rpx;
+  position: relative;
+}
+
+.comments_praised .item .count {
+  position: absolute;
+  top: -20rpx;
+  font-size: 22rpx;
+}
+
+

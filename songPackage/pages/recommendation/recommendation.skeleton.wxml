@@ -1,0 +1,87 @@
+<!--
+```
+<import src="recommendation.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+@import "./recommendation.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="recomendationContainer">
+      <view class="header">
+        <image class="sk-image"></image>
+        <view class="date">
+          <text class="month sk-transparent sk-text-10-0000-387 sk-text" style="background-position-x: 50%;">5 /</text>
+          <text class="day sk-transparent sk-text-20-0000-956 sk-text" style="background-position-x: 50%;"> 23</text>
+        </view>
+      </view>
+      <view class="ListContainer">
+        <view class="listHeader">
+          <text class="sk-transparent sk-text-30-0000-153 sk-text">播放全部</text>
+          <text class="multipleChoice sk-transparent sk-text-30-0000-924 sk-text">多选</text>
+        </view>
+        <scroll-view scroll-y="true" class="listScroll">
+          <view class="scrollItem" data-index="0" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-308 sk-text">十年 (国语版)</text>
+              <text class="author sk-transparent sk-text-20-0000-458 sk-text">陈奕迅</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="1" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-850 sk-text">IF&nbsp;YOU钢琴版</text>
+              <text class="author sk-transparent sk-text-20-0000-675 sk-text">Grisse</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="2" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-851 sk-text">遗憾</text>
+              <text class="author sk-transparent sk-text-20-0000-185 sk-text">渡</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="3" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-9 sk-text">生命有一种绝对</text>
+              <text class="author sk-transparent sk-text-20-0000-413 sk-text">五月天</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="4" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-914 sk-text">栀子花开-钢琴版（文武贝-《味觉钢琴》曲谱试听）</text>
+              <text class="author sk-transparent sk-text-20-0000-356 sk-text">文武贝</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="5" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-918 sk-text">我好想你</text>
+              <text class="author sk-transparent sk-text-20-0000-535 sk-text">陈戈</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="scrollItem" data-index="6" data-song="[object Object]">
+            <image class="sk-image"></image>
+            <view class="musicInfo">
+              <text class="musicName sk-transparent sk-text-20-0000-661 sk-text">悪魔の子</text>
+            </view>
+            <text class="iconfont icon-more sk-pseudo sk-pseudo-circle"></text>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

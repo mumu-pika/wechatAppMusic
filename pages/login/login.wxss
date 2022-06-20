@@ -1,0 +1,123 @@
+/* pages/login/login.wxss */
+/* 登录界面（整个） */
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fdf1e5;
+}
+
+.wrapper{
+  position:relative;
+  z-index: 90;
+  /* padding-bottom: 40rpx; */
+}
+
+.left-top-sign{
+  position:relative;
+  font-size: 100rpx;
+  /* color: #f8f8f8; */
+  color:#ffc082c2;
+  left: 16rpx;
+}
+
+.welcome{
+  position:relative;
+  left: 50rpx;
+  /* top: -60rpx; */
+  font-size: 50rpx;
+  color: #555;
+}
+
+
+.input-content{
+  margin-top: 10vh;
+  padding: 0 60rpx;
+}
+.input-item{
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: center;
+  padding: 0 30rpx;
+  background:#f8f6fc;
+  height: 120rpx;
+  border-radius: 4px;
+  margin-bottom: 50rpx;
+
+}
+
+.input-item:last-child{
+  margin-bottom: 0;
+}
+
+.input-item .account-text{
+  font-size: 36rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  color: #303133;
+}
+
+.input-item input{
+  height: 60rpx;
+  font-size: 32rpx;
+  color: #303133;
+  width: 100%;
+}
+.confirm-btn{
+  width: 630rpx!important;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-radius: 50rpx;
+  margin-top: 70rpx;
+  background: #d43c33;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 0;
+}
+.confirm-btn2:after{
+  border-radius: 100px;
+}
+
+.forget-section{
+  font-size: 30rpx;
+  color: #4399fc;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+/* 底部注册栏 */
+.register-section{
+  position:absolute;
+  left: 0;
+  bottom: 100rpx;
+  width: 100%;
+  font-size: 30rpx;
+  color: #606266;
+  text-align: center;
+
+}
+.register-section text{
+  color: #4399fc;
+  margin-left: 10rpx;
+}
+
+/* 底部游客登录 */
+.visitor-section {
+  position:absolute;
+  left: 0;
+  bottom: 50rpx;
+  width: 100%;
+  font-size: 30rpx;
+  color: #4399fc;
+  text-align: center;
+}
+
+
+
+/* 图片 */
+.login-image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 60rpx auto;
+}

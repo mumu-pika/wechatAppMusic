@@ -1,0 +1,154 @@
+/* pages/search/search.wxss */
+.searchContainer{
+  padding: 0 10rpx;
+}
+
+/* 头部搜索区域 */
+.searchHeader{
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 10rpx 0;
+}
+
+/* 头部搜索框 */
+.searchHeader .searchInput{
+  position: relative;
+  flex: 1;
+  background-color: #fde4fc;
+  /* background-color: rgba(237, 237, 237, 0.3); */
+  border-radius: 10rpx;
+
+}
+
+/* 搜索框内左侧放大镜图标 */
+.searchHeader .searchIcon{
+  position: absolute;
+  left: 16rpx;
+  font-size: 36rpx;
+}
+/* 搜索框 */
+.searchHeader .searchInput input{
+  margin-left: 60rpx;
+  height: 60rpx;
+}
+
+/* 搜索框里placeholder */
+.searchInput .placeholder{
+  color: #d302c1fd;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.searchInput .searchInputDeleteIcon{
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  font-size: 36rpx;
+  /* 注意！ 这里层级一定提高，不然点击的不是图标，而是表单项，会导致无法删除搜索内容 */
+  z-index: 10;
+}
+
+
+.searchHeader .cancel{
+  width: 100rpx;
+  text-align: center;
+}
+
+
+
+/* 热搜榜 */
+.trendingContainer{
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom:1rpx solid #eee;
+}
+
+
+.trendingContainer .title{
+  font-size: 30rpx;
+}
+
+/* 热搜列表 （左右流式布局） */
+.trendingList{
+  display: flex;
+  /* 需要换行 */    
+  flex-wrap:wrap; 
+}
+
+.trendingItem{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+
+.trendingItem .order{
+  margin: 0 10rpx;
+}
+
+.trendingItem .iconImage{
+  width: 40rpx;
+  height: 36rpx;
+  margin-left:10rpx;
+}
+
+/* 搜索内容展示 */
+.searchContent{
+  color: rgba(107, 100, 238, 0.96);
+  height:80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #d43c33;
+}
+
+.searchList .searchItem{
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+
+.searchItem .content{
+  flex: 1;
+  margin-left: 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+/* 历史搜索记录区域 */
+.searchHistoryContainer{
+  position: relative;
+  display: flex;
+  flex-wrap:wrap;
+  margin: 20rpx 0 0 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.searchHistoryContainer .title{
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-right: 20rpx ;
+}
+
+.searchHistoryContainer .historyItem{
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #ededed;
+  margin: 0 10rpx 20rpx 0;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+}
+
+/* 删除的垃圾桶小图标 */
+.searchHistoryContainer .deleteIcon{
+  position: absolute;
+  bottom: 24rpx;
+  right: 20rpx;
+  font-size: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 10rpx;
+}
+

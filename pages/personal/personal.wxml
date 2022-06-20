@@ -1,0 +1,84 @@
+<view class="personalContainer">
+  <!-- 个人背景及信息展示 界面上部 -->
+  <view class="user-section">
+    <image class="bg" src="/static/images/personal/bgImg.jpg"></image>
+    <!-- 注销登出 (图标表示)-->
+    <text class="iconfont icon-cancellation cancellation" bindtap="toCheckout"></text>
+    <view class="user-info-box">
+      <view class="portrait-box">
+        <image class="portrait"
+          src="{{userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/personal/missing-face.png'}}"></image>
+      </view>
+      <view class="info-box" bindtap="toLogin">
+        <text class="username">{{userInfo.nickname?userInfo.nickname:'游客'}}</text>
+      </view>
+    </view>
+    <view class="vip-card-box">
+      <image class="card-bg" src="/static/images/personal/vip-card-bg.png" mode=""></image>
+      <view class="b-btn">
+        立即开通
+      </view>
+      <view class="title">
+        <!-- 会员图标-->
+        <text class="iconfont icon-vip"></text>
+        超级会员
+      </view>
+      <text class="e-m">China YYDS</text>
+      <text class="e-b">快来开通会员听歌~</text>
+    </view>
+  </view>
+
+  <!-- 导航展示区域 界面中下部分 -->
+  <view class="cover-container" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove"
+    bindtouchend="handleTouchEnd" style="transform:{{coverTransform}}; transition:{{coverTransition}}">
+    <image class="arc" src="/static/images/personal/arc.png"></image>
+    <!-- 个人中心导航 -->
+    <view class="nav-section">
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
+        <text class="iconfont icon-message"></text>
+        <text>我的消息</text>
+      </view>
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
+        <text class="iconfont icon-friends"></text>
+        <text>我的好友</text>
+      </view>
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
+        <text class="iconfont icon-personalIndex"></text>
+        <text>个人主页</text>
+      </view>
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
+        <text class="iconfont icon-dressUp"></text>
+        <text>个性装扮</text>
+      </view>
+    </view>
+
+    <!-- 个人中心列表 位于下方-->
+    <view class="personalContent">
+      <view class="recentPlayContainer">
+        <text class="title">最近播放</text>
+        <!-- 最近播放记录 -->
+        <scroll-view wx:if="{{recentPlayList.length}}" scroll-x class="recentScroll" enable-flex>
+          <view class="recentItem" wx:for="{{recentPlayList}}" wx:key="id">
+            <image src="{{item.song.al.picUrl}}"></image>
+          </view>
+        </scroll-view>
+        <view wx:else class="recentItemDefault">暂无播放记录</view>
+      </view>
+
+      <view class="cardList">
+        <view class="card-item">
+          <text class="title">我的音乐</text>
+          <text class="more iconfont icon-nextDown"></text>
+        </view>
+        <view class="card-item">
+          <text class="title">我的收藏</text>
+          <text class="more iconfont icon-nextDown"></text>
+        </view>
+        <view class="card-item">
+          <text class="title">我的电台</text>
+          <text class="more iconfont icon-nextDown"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,87 @@
+<!--
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+@import "./index.skeleton.wxss";
+```
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view>
+      <view class="indexContainer">
+        <swiper class="banners" indicator-active-color="#d43c33" indicator-color="ivory" indicator-dots="true" current="0" autoplay="false">
+          <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <image class="sk-image"></image>
+          </swiper-item>
+        </swiper>
+        <view class="navContainer">
+          <scroll-view enable-flex="true" scroll-x="true" class="navScroll">
+            <view class="navItem">
+              <text class="iconfont icon-recommendation sk-pseudo sk-pseudo-circle"></text>
+              <text class="sk-transparent sk-text-14-2857-615 sk-text">每日推荐</text>
+            </view>
+            <view class="navItem">
+              <text class="iconfont icon-fm sk-pseudo sk-pseudo-circle"></text>
+              <text class="sk-transparent sk-text-14-2857-128 sk-text">私人FM</text>
+            </view>
+            <view class="navItem">
+              <text class="iconfont icon-songList sk-pseudo sk-pseudo-circle"></text>
+              <text class="sk-transparent sk-text-14-2857-771 sk-text">歌单</text>
+            </view>
+            <view class="navItem">
+              <text class="iconfont icon-topList sk-pseudo sk-pseudo-circle"></text>
+              <text class="sk-transparent sk-text-14-2857-760 sk-text">排行榜</text>
+            </view>
+            <view class="navItem">
+              <text class="iconfont icon-live sk-pseudo sk-pseudo-circle"></text>
+              <text class="sk-transparent sk-text-14-2857-641 sk-text">直播</text>
+            </view>
+            <view class="navItem">
+              <text class="iconfont icon-track sk-pseudo sk-pseudo-circle"></text>
+              <text class="sk-transparent sk-text-14-2857-733 sk-text">数字专辑</text>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="recommendContainer">
+          <view is="components/NavHeader/NavHeader">
+            <view class="NavHeader--header">
+              <text class="NavHeader--title sk-transparent sk-text-30-0000-699 sk-text">推荐歌曲</text>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-551 sk-text">为你精心推荐</text>
+                <text class="NavHeader--more sk-transparent sk-text-14-2857-486 sk-text">查看更多</text>
+              </view>
+            </view>
+          </view>
+          <scroll-view enable-flex="true" scroll-x="true" class="recommendScroll">
+            <view class="scrollItem">
+              <image class="sk-image"></image>
+              <text class="sk-transparent sk-text-14-2857-538 sk-text">如果当时忍住做朋友就好了</text>
+            </view>
+            <view class="scrollItem">
+              <image class="sk-image"></image>
+              <text class="sk-transparent sk-text-14-2857-853 sk-text">高能燃脂•假期健身跑步必备BGM</text>
+            </view>
+            <view class="scrollItem">
+              <image class="sk-image"></image>
+              <text class="sk-transparent sk-text-14-2857-948 sk-text">古典清香 I 我的茶馆里住着巴赫与肖邦</text>
+            </view>
+            <view class="scrollItem">
+              <image class="sk-image"></image>
+              <text class="sk-transparent sk-text-14-2857-483 sk-text">华语伤感 | 遇见了你却错过了她</text>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="topList">
+          <view is="components/NavHeader/NavHeader">
+            <view class="NavHeader--header">
+              <text class="NavHeader--title sk-transparent sk-text-30-0000-251 sk-text">排行榜</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sk-loading"></view>
+  </view>
+</template>

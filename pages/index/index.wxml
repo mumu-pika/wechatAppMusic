@@ -1,0 +1,96 @@
+<!-- pages/index/index.wxml 引入模板 -->
+<import src="index.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" />
+<view wx:else>
+  <view class="indexContainer">
+    <!-- 轮播图区域 -->
+    <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33">
+      <swiper-item wx:for="{{bannerList}}" wx:key="bannerId" wx:for-item="bannerItem">
+        <image src="{{bannerItem.pic}}"></image>
+      </swiper-item>
+    </swiper>
+
+    <!-- 五个图标导航区域-->
+    <view class="navContainer">
+      <scroll-view class="navScroll" enable-flex scroll-x>
+        <view class="navItem" bindtap="toRecommendation">
+          <text class=" iconfont icon-recommendation"></text>
+          <text>每日推荐</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-fm"></text>
+          <text>私人FM</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-songList"></text>
+          <text>歌单</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-topList"></text>
+          <text>排行榜</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-live"></text>
+          <text>直播</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-track"></text>
+          <text>数字专辑</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-book"></text>
+          <text>有声书</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-follow"></text>
+          <text>关注新歌</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-singing"></text>
+          <text>歌房</text>
+        </view>
+        <view class="navItem">
+          <text class=" iconfont icon-game"></text>
+          <text>游戏专区</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 推荐歌曲区域 -->
+    <view class="recommendContainer">
+      <!-- 头部区域 -->
+      <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
+      <!-- 内容区 -->
+      <scroll-view class="recommendScroll" enable-flex scroll-x>
+        <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" wx:for-item="recommendItem">
+          <image src="{{recommendItem.picUrl}}"></image>
+          <text>{{recommendItem.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 底部播放栏，在有音乐播放时会显示，无音乐播放时会隐藏 -->
+    <TabBarPlayer wx:if="{{!isMusicStop}}" title="{{musicName}}" singer="{{singerName}}" cover="{{coverImg}}" isMusicPlay="{{isMusicPlay}}"></TabBarPlayer>
+
+    <!-- 排行榜区域 -->
+    <view class="topList">
+      <!-- 头部区域 -->
+      <NavHeader title="排行榜" nav="热歌风向标"></NavHeader>
+      <!-- 内容区域 -->
+      <swiper class="topListSwiper" circular="true" next-margin="100rpx">
+        <swiper-item wx:for="{{topList}}" wx:key="name" wx:for-item="topListItem">
+          <view class="swiperItem">
+            <view class="title">{{topListItem.name}}</view>
+            <view class="musicItem" wx:for="{{topListItem.tracks}}" wx:key="id" wx:for-item="musicItem">
+              <image src="{{musicItem.al.picUrl}}"></image>
+              <text class="count">{{index + 1}}</text>
+              <text class="musicName">{{musicItem.name}}</text>
+              <text class="singerName">-</text>
+              <text class="singerName">{{musicItem.ar[0].name}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

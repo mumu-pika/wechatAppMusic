@@ -1,0 +1,43 @@
+<view class="songDetailContainer background" style="background-image:url({{song.al.picUrl}})">
+  <!-- 顶部区域 -->
+  <view class="author">{{song.ar[0].name}}</view>
+  <!-- 充当底座 -->
+  <image class="circle"></image>
+  <image class="needle {{isPlay &&'needleRotate'}}" src="/static/images/song/needle.png"></image>
+
+  <!-- 中间磁盘disc区域 -->
+  <view class="discContainer {{!isRestart && 'discAnimation'}}" style="{{animationState}}">
+    <image class="discImg" src="/static/images/song/disc.png"></image>
+    <image class="musicImg" src="{{song.al.picUrl}}"></image>
+  </view>
+
+  <!-- 进度条和播放控制区域 -->
+  <view class="musicPlayContainer">
+    <!-- 进度条控制区域 -->
+    <view class="progressControl">
+      <text>{{currentTime}}</text>
+      <!-- 总进度条 原版，显示但没有拖动 -->
+      <!-- <view class="barControl"> -->
+      <!-- 实时进度条 -->
+      <!-- <view class="audio-currentTime-Bar" style="width:{{currentWidth + 'rpx'}}"> -->
+      <!-- 播放时刻的小圆球 -->
+      <!-- <view class="audio-circle"> -->
+      <!-- </view> -->
+      <!-- </view> -->
+      <!-- </view> -->
+      <!-- 总进度条 使用slider 可以拖动 -->
+      <slider class="slider-wrapper" bindchange="sliderChange" bindchanging="sliderChanging" value="{{timePoint}}" />
+      <text>{{durationTime}}</text>
+    </view>
+
+    <!-- 底部控制播放区域 -->
+    <view class="musicControl">
+      <text class="iconfont icon-single-Loop"></text>
+      <text class="iconfont icon-prev" id="prev" bindtap="handleSwitch"></text>
+      <text class="iconfont {{isPlay?'icon-suspend': 'icon-play'}} big"
+        bindtap="handleMusicPlay"></text>
+      <text class="iconfont icon-next" id="next" bindtap="handleSwitch"></text>
+      <text class="iconfont icon-List"></text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<!--pages/video/video.wxml-->
+<view class="videoContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <text class="iconfont icon-menu_leftSlider menu"></text>
+    <!-- <image src="/static/images/video/video.jpg"></image> -->
+    <view class="search" bindtap="toSearch">搜索歌曲</view>
+    <text class="iconfont icon-distinguishSongs songListen"></text>
+    <!-- <image src="/static/images/logo.png"></image> -->
+  </view>
+  <!-- 导航区域 -->
+  <scroll-view class="navScroll" scroll-x enable-flex scroll-into-view="{{'scroll' + navId}}"
+    scroll-with-animation="true">
+    <view id="{{'scroll' + item.id}}" class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="navContent {{navId == item.id?'active':''}}" bindtap="changeNav" data-id="{{item.id}}">{{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 视频的列表区域 -->
+  <scroll-view scroll-y class="videoScroll" refresher-enabled bindrefresherrefresh="handleRefresherPulling"
+    refresher-triggered="{{isTriggered}}" bindscrolltolower="handleScrollToLower">
+    <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
+      <video src="{{item.data.urlInfo}}" id="{{item.data.vid}}" poster="{{item.data.coverUrl}}" class="common"
+        wx:if='{{videoId === item.data.vid}}' object-fit="fill" bindtimeupdate="handleTimeUpdate"
+        bindended="handleEnded"></video>
+      <!-- 性能优化，使用image图片代替video标签 -->
+      <!-- 一开始video隐藏，所以需要image传入id -->
+      <image wx:else src="{{item.data.coverUrl}}" class="common" bindtap="handlerPlay" id="{{item.data.vid}}"></image>
+
+      <!-- 视频下方区域（标题，评价等） -->
+      <view class="content">{{item.data.title}}</view>
+      <view class="footer">
+        <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.data.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-love" style="color: red"></text>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-comment" style="color: #ff3d00"></text>
+            <text class="count">{{item.data.commentCount}}</text>
+          </text>
+          <!-- 转发部分 open-type="share" 触发用户转发-->
+          <button open-type="share" class="item btn" style="color: #e040fb">
+            <text class="iconfont icon-share"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部播放栏，在有音乐播放时会显示，无音乐播放时会隐藏 -->
+  <TabBarPlayer wx:if="{{!isMusicStop}}" title="{{musicName}}" singer="{{singerName}}" cover="{{coverImg}}"
+    isMusicPlay="{{isMusicPlay}}"></TabBarPlayer>
+
+
+</view>

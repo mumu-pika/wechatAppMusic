@@ -1,0 +1,31 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">Login</view>
+    <view class="welcome">
+      欢迎回来~
+    </view>
+
+    <view class="input-content">
+      <view class="input-item">
+        <text class="account-text">手机号码</text>
+        <input  type="text" placeholder="请输入手机号码" bindinput="handleInput" id="phone" data-type="phone"/>
+      </view>
+      <view class="input-item">
+        <text class="password-text">密码</text>
+        <input type="password"  placeholder="请输入密码" bindinput="handleInput" id="password" data-type="password"/>
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="login">登录</button>
+    <view class="forget-section">
+      忘记密码?
+    </view>
+  </view>
+  <image class="login-image" src="../../static/images/login/pikaLogin.gif"></image>
+  <view class="register-section">
+    还没有账号?
+    <text >马上注册</text>
+  </view>
+  <view class="visitor-section" bindtap="visitorLogin">游客登录</view>
+</view>
+

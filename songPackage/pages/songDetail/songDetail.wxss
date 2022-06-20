@@ -1,0 +1,261 @@
+/* 整个音乐播放页样式 */
+.songDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* 整个音乐播放页面背景图样式 */
+.background{
+  /* background-color: rgba(0,0,0,0.5); */
+  /* background-position属性在css中用来设置背景图片的位置，它通过设置水平方向和垂直方向的取值来到达效果 */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 120% 120%;
+  transition: opacity .3s linear;
+  /* 消除filter: blur(...px)的高斯模糊后的边缘扩展的白边 */
+  overflow: hidden;
+  z-index: -1;
+
+}
+
+/* 在全局背景前添加一个灰色的蒙层，在专辑图片未加载出来的时候，会显示蒙层 */
+.background::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+
+
+/* 高斯模糊的蒙层 */
+.background::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  /* blur(px) 给图像设置高斯模糊 */
+  filter: blur(100px); 
+  
+
+}
+
+/* 上方歌手名字 */
+.author{
+  z-index: 2;
+  color:#cdcdcd;
+}
+
+/* 底座 */
+.circle {
+  position: relative;
+  z-index: 100;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 10rpx 0;
+}
+
+
+
+/* 摇杆区域 */
+.needle {
+  position: relative;
+  z-index: 10;
+  /* 设置top为了压住底座 */
+  top: -40rpx;
+  left: 60rpx;
+  width: 192rpx;
+  height: 274rpx;
+  /* 摇杆旋转 */
+  /* s设置旋转的中心点 */
+  transform-origin: 40rpx 0;
+  transform: rotate(-20deg);
+  transition: transform 1s;
+}
+
+/* 设置摇杆归位，旋转0度的样式 */
+.needleRotate {
+  transform: rotate(0);
+}
+
+
+
+/* 磁盘区域 */
+.discContainer {
+  position: relative;
+  top: -12vh;
+  width: 598rpx;
+  height: 598rpx;
+  z-index: 2;
+
+}
+
+/* 磁盘旋转的动画 */
+.discAnimation {
+  /* animation-play-state: running; */
+  animation: disc 40s linear infinite;
+  /* 这里延迟是为了等摇杆落在disc上，disc再旋转 */
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+
+/*  
+  @keyframes:设置动画帧
+  1）from to
+  适用于简单的动画，只有其实帧和结束帧
+  2）百分比
+  多用于复杂的动画（中间有多个站点），动画不止两帧
+  0 - 100% ，根据需求任意拆分
+*/
+@keyframes disc {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+  /* 100%{
+    transform: rotate(360deg);
+  } */
+}
+
+.discContainer .discImg {
+  width: 100%;
+  height: 100%;
+}
+
+.discContainer .musicImg {
+  /* 开启绝对定位，并使得其在父元素中间居中 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+
+
+.musicPlayContainer {
+  background-color: transparent;
+  width: 100%;
+  height: 20vh;
+  z-index: 2;
+}
+
+
+
+/* 进度条控制区域 */
+.progressControl {
+  display: flex;
+  width: 95%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: auto;
+  color: #fff;
+}
+
+/* 进度条区域样式 */
+.slider-wrapper {
+  display: block;
+  position: relative;
+  width: 72%;
+  height: 36rpx;
+  margin: auto;
+  box-sizing: border-box;
+
+}
+
+/* .slider-wrapper.wx-slider-handle-wrapper{
+  margin: auto !important;
+} */
+
+
+
+/* 进度条区域中的小圆球 */
+.slider-wrapper .wx-slider-thumb {
+  width: 20rpx !important;
+  height: 20rpx !important;
+  margin-left: -10rpx !important;
+  margin-top: -10rpx !important;
+  /* margin: auto; */
+}
+
+/* 进度条区域中的已完成进度条（小圆球左侧完成部分） */
+.slider-wrapper .wx-slider-track {
+  background-color: #b34bf5 !important;
+}
+
+
+
+
+/* 实时进度条 (未使用)*/
+.barControl {
+  width: 70%;
+  height: 4rpx;
+  background: rgba(0, 0, 0, 0.4);
+  margin: auto;
+}
+
+.audio-currentTime-Bar {
+  position: relative;
+  height: 4rpx;
+  background-color: red;
+}
+
+.audio-circle {
+  position: absolute;
+  /* 相对父元素右侧偏移出去一个小球直径的长度大小 */
+  right: -12rpx;
+  /* 相对父元素上侧偏移出去一个小球半径减去进度条height的一半之后得到的差值大小 */
+  top: -4rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background-color: hotpink;
+}
+
+
+
+/* 底部控制区域 */
+.musicControl {
+  display: flex;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 15vh; */
+  border-top: 1rpx solid #fff;
+  width: 100%;
+}
+
+.musicControl text {
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 70rpx;
+}
+
+/* 控制面板中间的播放按键要显示的大一些 */
+.musicControl text.big {
+  font-size: 90rpx;
+}

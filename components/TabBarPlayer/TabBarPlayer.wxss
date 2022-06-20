@@ -1,0 +1,105 @@
+/* components/TabBarPlayer/TabBarPlayer.wxss */
+/* 微信小程序的子组件属于独立模块，独立模块需要使用iconfont时需要将iconfont引入独立模块的样式文件中 */
+@import "/static/iconfont/iconfont.wxss";
+
+.player {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: #fce4ec;
+  border-top: 1px solid #ffffff;
+  height: 100rpx;
+  padding: 0 20rpx;
+}
+
+.player-songContainer {
+  display: flex;
+  flex: 1;
+}
+
+
+.player-cover {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+
+.player-info {
+  /* flex的默认值 0 1 auto */
+  /* flex: 1 flex-grow 值为1，flex-shrink 取 1，flex-basis 取 0% */
+  flex: 1;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+}
+
+.player-info-title {
+  /* 不换行 */
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-info-singer {
+  /* 不换行 */
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  color: #707070;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+
+.player-controls .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #fce4ec;
+  font-size: 66rpx;
+  /* color: #333; */
+  margin-right: 10rpx;
+}
+
+
+.content-playlist {
+  height: 100%;
+}
+
+
+/* 播放列表 */
+/* .playlist-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #333 ;
+  height: 112rpx;
+}
+.playlist-cover {
+  width: 20rpx;
+  height: 80rpx;
+  margin-left:15rpx;
+  border-radius: 8rpx;
+  border: 1px solid#333 ;
+}
+.playlist-info {
+  flex: 1;
+  font-size: 10pt;
+  line-height: 38rpx;
+  margin-left: 20rpx; 
+  padding-bottom: 8rpx;
+}
+.playlist-info-singer {
+  color:#888;
+} */

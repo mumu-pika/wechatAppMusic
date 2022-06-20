@@ -1,0 +1,6 @@
+/* test/test.wxss */
+.testContainer{
+  display: block;
+  text-align: center;
+  margin: 20rpx;
+}

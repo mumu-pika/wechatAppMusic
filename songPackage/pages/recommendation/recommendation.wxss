@@ -1,0 +1,119 @@
+/* pages/recommendation/recommendation.wxss */
+@import "./recommendation.skeleton.wxss";
+
+/* .body{
+  background-color: #fdf1e5;
+} */
+
+
+.recomendationContainer{
+  height: 100%;
+  background-color: #fdf1e5;
+}
+
+/* 每日推荐头部样式 */
+.recomendationContainer .header {
+  position: relative;
+  width: 100%;
+  height: 400rpx;
+  /* background-color: #bfa; */
+}
+
+.recomendationContainer .header image {
+  width: 100%;
+  height: 100%;
+}
+
+.recomendationContainer .header .date {
+  position: absolute;
+  left: 58%;
+  top: 48%;
+  transform: translate(-45%, -50%);
+  width: 300rpx;
+  height: 80rpx;
+  /* border: 1rpx solid red; */
+  text-align: center;
+  line-height: 100rpx;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 60rpx;
+  font-weight: 600;
+  color: #551b42;
+
+}
+
+.recomendationContainer .header .date .month {
+  font-size: 80rpx;
+}
+
+/* 界面中间播放列表样式 */
+.ListContainer {
+  /* 由于ListContainer在下面整块body部分中，又具有同样的背景颜色，看不出圆角变化，所以这里开启了定位，并设置top*/
+  position: relative;
+  top: -20rpx;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+  background-color: #fdf1e5;
+}
+
+.listHeader {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.listHeader .multipleChoice {
+  float: right;
+}
+
+/* 内容区 */
+.listScroll{
+  overflow: auto; 
+  /* 这里设置500rpx，
+  .recomendationContainer .header image里的背景图高度 400rpx
+  .ListHeader 80rpx
+  .ListContainer top -20rpx
+  500 = 400 + 80 + 20
+  */
+  height: calc(100vh - 500rpx);
+}
+
+
+.scrollItem {
+  display: flex;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+}
+
+.scrollItem image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+
+.musicInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 20rpx;
+  border-bottom: 1rpx solid #ffcbb9;
+}
+
+.musicInfo text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  /* 设定字体最大的长度 */
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scrollItem .iconfont {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+}

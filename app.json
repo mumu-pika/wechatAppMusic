@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/video/video",
+    "pages/search/search",
+    "pages/login/login",
+    "test/test"
+
+
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#57b4eb",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "音乐花园",
+    "initialRenderingCache": "static"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ff7043",
+    "backgroundColor": "ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/static/images/tabBar/tab-home.png",
+        "selectedIconPath": "/static/images/tabBar/tab-home-selected.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "/static/images/tabBar/tab-video.png",
+        "selectedIconPath": "/static/images/tabBar/tab-video-selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/static/images/tabBar/tab-me.png",
+        "selectedIconPath": "/static/images/tabBar/tab-me-selected.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "TabBarPlayer": "/components/TabBarPlayer/TabBarPlayer"
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "subpackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        "pages/recommendation/recommendation",
+        "pages/songDetail/songDetail"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index":{
+      "packages": ["songPackage"]
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

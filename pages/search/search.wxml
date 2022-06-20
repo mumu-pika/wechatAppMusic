@@ -1,0 +1,54 @@
+<view class="searchContainer">
+  <!-- 头部搜索区域 -->
+  <view class="searchHeader">
+    <view class="searchInput">
+      <!-- 输入框最左侧（搜索放大镜图标） -->
+      <text class="iconfont icon-searchContent searchIcon"></text>
+      <input type="text" placeholder="{{placeholderContent}}" placeholder-class="placeholder"
+        bindinput="handleInputChange" value="{{searchContent}}"/>
+        <!-- 输入框删除（叉号图标） -->
+        <text class="iconfont icon-searchInputDelete searchInputDeleteIcon" 
+        bindtap="clearSearchInput" hidden="{{!searchContent}}"/>
+    </view>
+    <text class="cancel">取消</text>
+  </view>
+
+  <block wx:if="{{searchList.length}}">
+    <!--搜索内容展示 -->
+    <view wx:if="{{isSearched}}" class="searchContentContainer">
+      <view class="searchContent">搜索内容：{{searchContent}}</view>
+      <view class="searchList">
+        <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
+          <text class="iconfont icon-searchContent"></text>
+          <text class="content">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="searchContentContainer">
+      <view class="searchContent">记录空空如也~~~~</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <!-- 搜索历史记录 -->
+    <view wx:if="{{historyList.length}}" class="searchHistoryContainer">
+      <view class="title">搜索历史</view>
+      <view class="historyItem" wx:for="{{historyList}}" wx:key="item">{{item}}</view>
+      <!-- 删除(垃圾桶图标) -->
+      <text class="iconfont icon-delete deleteIcon" bindtap="deleteSearchHistory"></text>
+    </view>
+    <!-- 热搜榜 -->
+    <view class="trendingContainer">
+      <view class="title">热搜榜</view>
+      <!-- 热搜列表 -->
+      <view class="trendingList">
+        <view class="trendingItem" wx:for="{{trendingList}}" wx:key="iconUrl">
+          <text class="order">{{index + 1}}</text>
+          <text>{{item.searchWord}}</text>
+          <image class="iconImage" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>

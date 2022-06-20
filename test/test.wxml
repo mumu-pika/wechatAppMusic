@@ -1,0 +1,6 @@
+<!--test/test.wxml-->
+<view class="testContainer">
+  <!-- 测试获取用户唯一标识openId -->
+  <view>测试获取用户唯一标识openId</view>
+  <button bindtap="getOpenId">获取openId</button>
+</view>

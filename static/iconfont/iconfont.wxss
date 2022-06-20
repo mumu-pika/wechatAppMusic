@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3413847 */
+  src: url('//at.alicdn.com/t/font_3413847_73e216dujdm.woff2?t=1653632837373') format('woff2'),
+       url('//at.alicdn.com/t/font_3413847_73e216dujdm.woff?t=1653632837373') format('woff'),
+       url('//at.alicdn.com/t/font_3413847_73e216dujdm.ttf?t=1653632837373') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cancellation:before {
+  content: "\e7ee";
+}
+
+.icon-menu_leftSlider:before {
+  content: "\e651";
+}
+
+.icon-distinguishSongs:before {
+  content: "\e78b";
+}
+
+.icon-searchInputDelete:before {
+  content: "\e61a";
+}
+
+.icon-delete:before {
+  content: "\e624";
+}
+
+.icon-searchContent:before {
+  content: "\e623";
+}
+
+.icon-nextDown:before {
+  content: "\e62e";
+}
+
+.icon-vip:before {
+  content: "\e61b";
+}
+
+.icon-suspend2:before {
+  content: "\e610";
+}
+
+.icon-back:before {
+  content: "\e626";
+}
+
+.icon-playlist:before {
+  content: "\ea83";
+}
+
+.icon-play2:before {
+  content: "\e635";
+}
+
+.icon-loveList:before {
+  content: "\e779";
+}
+
+.icon-game:before {
+  content: "\e617";
+}
+
+.icon-follow:before {
+  content: "\e601";
+}
+
+.icon-book:before {
+  content: "\e640";
+}
+
+.icon-singing:before {
+  content: "\e895";
+}
+
+.icon-fm:before {
+  content: "\e625";
+}
+
+.icon-share:before {
+  content: "\e614";
+}
+
+.icon-comment:before {
+  content: "\e6ad";
+}
+
+.icon-more:before {
+  content: "\e612";
+}
+
+.icon-love:before {
+  content: "\e61e";
+}
+
+.icon-suspend:before {
+  content: "\e669";
+}
+
+.icon-shuffle:before {
+  content: "\e622";
+}
+
+.icon-order-Loop:before {
+  content: "\e60f";
+}
+
+.icon-play:before {
+  content: "\ea82";
+}
+
+.icon-prev:before {
+  content: "\e63c";
+}
+
+.icon-next:before {
+  content: "\e63e";
+}
+
+.icon-single-Loop:before {
+  content: "\e6ae";
+}
+
+.icon-List:before {
+  content: "\e6bf";
+}
+
+.icon-home:before {
+  content: "\e648";
+}
+
+.icon-home-selected:before {
+  content: "\e64d";
+}
+
+.icon-video:before {
+  content: "\e644";
+}
+
+.icon-me-selected:before {
+  content: "\e8bc";
+}
+
+.icon-video-selected:before {
+  content: "\e632";
+}
+
+.icon-me:before {
+  content: "\e600";
+}
+
+.icon-live:before {
+  content: "\e65c";
+}
+
+.icon-track:before {
+  content: "\e60e";
+}
+
+.icon-recommendation:before {
+  content: "\e629";
+}
+
+.icon-search:before {
+  content: "\e754";
+}
+
+.icon-dressUp:before {
+  content: "\e655";
+}
+
+.icon-topList:before {
+  content: "\e68f";
+}
+
+.icon-friends:before {
+  content: "\e60d";
+}
+
+.icon-message:before {
+  content: "\e609";
+}
+
+.icon-personalIndex:before {
+  content: "\e63b";
+}
+
+.icon-songList:before {
+  content: "\e636";
+}

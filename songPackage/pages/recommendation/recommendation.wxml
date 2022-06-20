@@ -1,0 +1,40 @@
+<!--pages/recommendation/recommendation.wxml-->
+<import src="recommendation.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" />
+<view wx:else>
+  <view class="recomendationContainer">
+    <!-- 头部 -->
+    <view class="header">
+      <image src="/static/images/recommendation/songList_bgImg.jpg"></image>
+      <view class="date">
+        <text class="month">{{month}} /</text>
+        <text class="day"> {{day}}</text>
+      </view>
+    </view>
+
+    <!-- 列表区域 -->
+    <view class="ListContainer">
+      <!-- 列表头部 -->
+      <view class="listHeader">
+        <text>播放全部</text>
+        <text class="multipleChoice">多选</text>
+      </view>
+      <!-- 内容区 -->
+      <scroll-view class="listScroll" scroll-y>
+        <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" bindtap="toSongDetail" data-index="{{index}}"
+          data-song="{{item}}">
+          <image src="{{item.al.picUrl}}"></image>
+          <view class="musicInfo">
+            <text class="musicName">{{item.name}}</text>
+            <text class="author">{{item.ar[0].name}}</text>
+          </view>
+          <text class="iconfont icon-more"></text>
+        </view>
+      </scroll-view>
+    </view>
+    
+    <!-- 底部播放栏，在有音乐播放时会显示，无音乐播放时会隐藏 -->
+    <TabBarPlayer wx:if="{{!isMusicStop}}" title="{{musicName}}" singer="{{singerName}}" cover="{{coverImg}}"
+      isMusicPlay="{{isMusicPlay}}"></TabBarPlayer>
+  </view>
+</view>
