@@ -18,6 +18,7 @@
 网易云接口开源项目地址： https://github.com/mumu-pika/NeteaseCloudMusicApi.git
 
 >这边我预留了一份在这个项目的仓库中，见CloudMusicApi.(因为请求地址或者是请求格式可能会有变化)
+https://github.com/mumu-pika/NeteaseCloudMusicApi.git
 
 >启动server
 ``` shell
